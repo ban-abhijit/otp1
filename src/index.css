@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes border-beam {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+/* Rocket Thruster Flame flicker */
+@keyframes thruster-flame {
+  0%, 100% {
+    transform: scaleY(1) scaleX(1);
+    filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.9));
+  }
+  50% {
+    transform: scaleY(1.35) scaleX(0.85);
+    filter: drop-shadow(0 0 18px rgba(56, 189, 248, 1));
+  }
+}
+
+.animate-thruster {
+  animation: thruster-flame 0.08s infinite alternate ease-in-out;
+}
+
+/* Distant Star Twinkle */
+@keyframes star-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-twinkle {
+  animation: star-twinkle var(--twinkle-dur, 3s) ease-in-out infinite;
+  animation-delay: var(--twinkle-delay, 0s);
+}
+
+/* Error Vibration Animation for Wrong OTP */
+@keyframes error-vibrate {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-9px);
+  }
+  30% {
+    transform: translateX(9px);
+  }
+  45% {
+    transform: translateX(-7px);
+  }
+  60% {
+    transform: translateX(7px);
+  }
+  75% {
+    transform: translateX(-4px);
+  }
+  90% {
+    transform: translateX(4px);
+  }
+}
+
+.animate-error-vibrate {
+  animation: error-vibrate 0.48s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* 6 Omnidirectional Curved Flight Paths (Paced at 0.8x speed ~ 2.9s) */
+@keyframes fly-box-0 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  45% { transform: translate(-40px, -55vh) rotate(-6deg); }
+  100% { transform: translate(-100px, -145vh) rotate(-14deg); opacity: 0.15; }
+}
+
+@keyframes fly-box-1 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  45% { transform: translate(45vw, -35vh) rotate(26deg); }
+  100% { transform: translate(110vw, -80vh) rotate(58deg); opacity: 0.15; }
+}
+
+@keyframes fly-box-2 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  45% { transform: translate(45vw, 25vh) rotate(68deg); }
+  100% { transform: translate(110vw, 65vh) rotate(118deg); opacity: 0.15; }
+}
+
+@keyframes fly-box-3 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  45% { transform: translate(40px, 55vh) rotate(145deg); }
+  100% { transform: translate(100px, 145vh) rotate(180deg); opacity: 0.15; }
+}
+
+@keyframes fly-box-4 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  45% { transform: translate(-45vw, 25vh) rotate(-68deg); }
+  100% { transform: translate(-110vw, 65vh) rotate(-118deg); opacity: 0.15; }
+}
+
+@keyframes fly-box-5 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  45% { transform: translate(-45vw, -35vh) rotate(-26deg); }
+  100% { transform: translate(-110vw, -80vh) rotate(-58deg); opacity: 0.15; }
+}
+
+.animate-fly-0 { animation: fly-box-0 2.9s cubic-bezier(0.38, 0, 0.24, 1) forwards; }
+.animate-fly-1 { animation: fly-box-1 2.9s cubic-bezier(0.38, 0, 0.24, 1) forwards; }
+.animate-fly-2 { animation: fly-box-2 2.9s cubic-bezier(0.38, 0, 0.24, 1) forwards; }
+.animate-fly-3 { animation: fly-box-3 2.9s cubic-bezier(0.38, 0, 0.24, 1) forwards; }
+.animate-fly-4 { animation: fly-box-4 2.9s cubic-bezier(0.38, 0, 0.24, 1) forwards; }
+.animate-fly-5 { animation: fly-box-5 2.9s cubic-bezier(0.38, 0, 0.24, 1) forwards; }
